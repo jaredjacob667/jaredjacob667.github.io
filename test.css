@@ -16,6 +16,15 @@ body
 	padding-right: 10px;
 	font-size: 14pt;
 	
+	text-align: center;
+	
+}
+
+.pageContent
+{
+	text-align: left;
+	max-width: 1280px;
+	margin: 0 auto;
 }
 
 nav
@@ -84,3 +93,10 @@ p
 {
 	padding: 5px;
 }
+
+img .scale-with-grid 
+{
+	max-width: 100%;
+	height: auto; 
+}
+
