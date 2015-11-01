@@ -14,12 +14,18 @@ body
 	padding: 5px;
 	padding-left: 10px;
 	padding-right: 10px;
+	font-size: 14pt;
 	
 }
 
 nav
 {
 	background-color: #162955
+}
+
+a
+{
+	color: black;
 }
 
 .nav-pills li a 
@@ -35,7 +41,7 @@ nav
 
 #mypicture
 {
-	background-color: #4F628E;
+	/*background-color: #4F628E;*/
 }
 
 #mainParagraph
@@ -46,7 +52,7 @@ nav
 
 #programmingImages
 {
-	background-color: #4F628E;
+	/*background-color: #4F628E;*/
 }
 
 #programmingImages div div
@@ -57,20 +63,24 @@ nav
 h2
 {
 	padding: 5px;
+	font-size: 22pt;
+	font-weight: bold;
 }
 
 h3
 {
-	background-color: #4F628E; 
+	background-color: #4F628E;
+	font-size: 20pt; 
+	font-weight: bold;
 }
 
 h4 
 {
 	font-style: italic;
+	font-size: 18pt;
 }
 
 p
 {
 	padding: 5px;
 }
-
