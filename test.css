@@ -10,12 +10,22 @@
 
 body
 {
-	background-color:#7887AB;
+
+	/*************************** BACKGROUND COLOR FROM GENERATOR **********************/
+  background: black; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(-90deg, black, gray); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(-90deg, black, gray); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(-90deg, black, gray); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(-90deg, black, gray); /* Standard syntax */
+	/**********************************************************************************/
+	color: white;
+	/*background-color:#7887AB;*/
 	padding: 5px;
 	padding-left: 10px;
 	padding-right: 10px;
 	font-size: 14pt;
 	
+
 	text-align: center;
 	
 }
@@ -29,7 +39,8 @@ body
 
 nav
 {
-	background-color: #162955
+
+	padding-bottom: 20px;
 }
 
 a
@@ -42,6 +53,7 @@ a
 	text-decoration: none;
 	color: white;
 	font-weight: bold;
+	background-color: #162955;
 }
 .nav-pills li a:hover
 {
@@ -49,6 +61,14 @@ a
 }
 
 #mypicture
+{
+	/*background-color: #4F628E;*/
+	-moz-box-shadow: -5px -5px 5px black;
+	-webkit-box-shadow: -5px -5px 5px black;
+	box-shadow: -5px -5px 5px black;
+}
+
+#mypictureContainer
 {
 	/*background-color: #4F628E;*/
 }
@@ -81,6 +101,7 @@ h3
 	background-color: #4F628E;
 	font-size: 20pt; 
 	font-weight: bold;
+	padding: 5px;
 }
 
 h4 
@@ -100,3 +121,7 @@ img .scale-with-grid
 	height: auto; 
 }
 
+.header
+{
+	padding:5px;
+}
