@@ -1,476 +1,204 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="personalPortfolioApp">
   <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Jared Jacob's current experience">
     <meta name="author" content="Jared Jacob">
-	
-    <title>Jared Jacob's Personal Website</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Add custom CSS here -->
-	
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/ekko-lightbox.css" rel="stylesheet">
-    <link href="css/flexslider.css" rel="stylesheet">
-    <link href="css/animate.min.css" rel="stylesheet">
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-		<!--[if lt IE 9]>
-		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
+    <title>Jared Jacob's Portfolio</title>
+    
+    <!-- ANGULAR -->
+    <script src="js/angular.min.js"></script>
+    
+    <!-- ANGULAR APP SETUP -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    
+    <!-- Bootstrap 4 with theme (Flatly)-->
+    <!-- replaces regular bootstrap css -->
+    <!-- Credit to https://bootswatch.com/-->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    
+    <!-- personal added styles -->
+    <link rel="stylesheet" href="css/custom_styles.css">
   </head>
-
-  <body>
-  <div id="boxWrapp">
-    <div class="main-nav clearfix">
-	  <!-- navbar -->
-	<nav class="navbar navbar-inverse" role="navigation">
-        <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#NavCol">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand bg-primary" href="#about">Jared Jacob</a>
-        </div>
-        
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="NavCol">
-         <ul class="nav navbar-nav navbar-right">
-           
-            <li class="current"><a href="#about" class="linear">Home</a></li>
-            <li><a href="#aboutMore" class="linear">About</a></li>
-            <li><a href="#work" class="linear">Work</a></li>
-            <li><a href="#contact" class="linear">Contact</a></li>
-          </ul>
-        
-         
-        </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
+  <body ng-controller="personalPortfolioController">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <a class="navbar-brand" href="#">Jared Jacob</a>
+      <!-- 
+        found out how to implement this as just angularjs so that I don't have to mess
+        with the JQuery dependency for bootstrap.js
+        https://stackoverflow.com/questions/14741988/twitter-bootstrap-navbar-with-angularjs-collapse-not-functioning
+        -->
+      <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation"> -->
+      <button type="button" class="navbar-toggler" ng-init="isCollapsed = true" ng-click="isCollapsed = !isCollapsed">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- change explained above -->
+      <!-- <div class="collapse navbar-collapse" id="navbarColor01"> -->
+      <div class="navbar-collapse" ng-class="{collapse: isCollapsed}" id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#myExperience">Experience</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contactMe">Contact</a>
+          </li>
+        </ul>
+      </div>
     </nav>
-	  
-	</div>
-    <!-- Full Page Image Header Area -->
-    <div id="about" class="header">
-
-	<div class="maskHeader"></div>
-	<div class="main-caption">
-		<div class="logo">
-			<!--<img src="img/jk.png" alt="logo" />-->
-		</div>
-			<!-- slider -->
-	<div id="flex-head" class="flexslider">
-		<ul class="slides">
-			<li>
-				<h1>Hi, I'm Jared Jacob</h1>	
-				<h2>Welcome to My Website</h2>
-			</li>
-			<li>
-<!-- I am a responsible and highly motivated programmer. 
-            I am adpatable to new changes while also being dependable. I like to challenge myself to 
-            further increase my skillbase. I work well on team projects as well as 
-            working on my own independent tasks.-->
-
-				<h1>I am a programmer</h1>	
-				<h2>Creating solutions using many different technologies</h2>
-			</li>
-			<li>
-				<h1>I am a great communicator</h1>	
-				<h2>Creating documentation and comments to help the team</h2>	
-			</li>
-		</ul>
-	</div> 
-    <!-- end slider --> 
-		<a href="#aboutMore" class="btn btnAbout btn-clear border-color color-primary btn-lg linear">READ MORE</a>
-	</div><!--  end main caption -->
-			
-    </div>
-	<!-- end header -->
-    <!-- /Full Page Image Header Area -->
-
     
-    <!-- content -->
-    <div id="aboutMore" class="page">
-      <div class="container">
-		<div class="row">
-          <div class="col-md-10  col-md-offset-1">
-		    <div class="build title-page">
-				<h2 class="text-center">About Me</h2>	
-				<div class="line-title bg-primary"></div>
-			</div>
-		   </div><!-- end col -->
-		</div><!-- end row -->
-		
-        <div class="row">
-           <div class="col-md-6">
-			   <div class="build main-about">
-				   <div class="row">
-				       <div class="col-md-3">
-				            <div class="main-avatar text-center">
-				                <div class="avatar img-thumbnail img-circle">
-				                <img src="img/avatar.jpg" alt="avatar" />
-				                </div>
-				            </div>
-				            
-				       </div>
-				       <div class="col-md-9">
-				            <div class="about-content">
-						<p>Hello, I'm Jared Jacob. I am a responsible and highly motivated programmer. 
-            I am adpatable to new changes while also being dependable. I like to challenge myself to 
-            further increase my skillbase. I work well on team projects as well as 
-            working on my own independent tasks.</p>
-						<a href="#contact" class="btn btn-clear btn-lg border-color linear hire">AVAILABLE TO HIRE</a>
-            <a href="Resume-JaredJacob.pdf" class="btn btn-clear btn-lg border-color linear hire">MY RESUME</a>
-					</div>
-				       </div>
-				   </div>
-				  
-					
-				</div>
-            </div><!-- end col -->
-		  
-      <!-- Changed progress bar script to count by 5's. Value can only be multiples of 5 -->
-        <div class="col-md-6">
-                <div class="build progressbar-a">
-                    <div class="wrapp-progress">
-                        <p class="pull-left">Python</p> 
-                        <div class="progress">
-                          
-                          <div class="progress-bar  clearfix" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
-                            <span class="precent-value"></span>
-							<i class="fa fa-caret-down"></i>
-                          </div>
-                        </div>
-                    </div>
-                    <div class="wrapp-progress">
-                        <p class="pull-left">C#, C, C++</p> 
-                        <div class="progress">
-                          
-                          <div class="progress-bar  clearfix" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
-                            <span class="precent-value"></span>
-							<i class="fa fa-caret-down"></i>
-                          </div>
-                        </div>
-                    </div>
-                    <div class="wrapp-progress">
-                        <p class="pull-left">SQL, Microsoft SQL Server, Relational databases</p> 
-                        <div class="progress">
-                          
-                          <div class="progress-bar  clearfix" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
-                           <span class="precent-value"></span>
-						   <i class="fa fa-caret-down"></i>
-                          </div>
-                        </div>
-                    </div>
-                    <div class="wrapp-progress">
-                        <p class="pull-left">Javascript, HTML, JQuery</p> 
-                        <div class="progress">
-                          
-                          <div class="progress-bar  clearfix" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
-                           <span class="precent-value"></span>
-						   <i class="fa fa-caret-down"></i>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div><!-- end row -->
-      </div>
-      </div>
-    
-    <!-- /Intro -->   
-
-    <!-- Portfolio -->
-    <div id="work" class="page clearfix">
-      <div class="container">
-		<div class="row">
-          <div class="col-md-10  col-md-offset-1">
-		    <div class="build title-page">
-				<h2 class="text-center">LATEST WORK</h2>	
-				<div class="line-title bg-primary"></div>
-			</div>
-		   </div><!-- end col -->
-		</div><!-- end row -->
-		   <div class="col-md-12">
-                
-                <ul id="filterOptions" class="clearfix">
-                    <li class="cur"><a class="btn btn-link linear" href="#" data-group="all">All</a></li>
-                    <li><span>/</span></li>
-                    <li><a class="btn btn-link linear" href="#" data-group="python">Python</a></li>
-					          <li><span>/</span></li>
-                    <li><a class="btn btn-link linear" href="#" data-group="javascript">Javascript</a></li> 
-                    <li><span>/</span></li>
-                    <li><a class="btn btn-link linear" href="#" data-group="android">Android</a></li>
-                    
-                </ul>
-               
-            </div><!--end-col-->
-		  <div class="col-md-12">
-		  <div class="folio-content clearfix">
-		   <div class="row">
-		   <div class="container_folio clearfix gallery" id="grid">
-       <!-- start of portfolio item 1-->
-			<div class="col-xs-12 col-sm-4 col-md-4 box" data-groups='["all", "python"]'>
-			<div class="folio-img">
-				<div class="portfolio-item ">
-					<div class="thumbnail">
-					   <div class="thumb-img">
-					  
-					  <div class="link-attr">
-						    <a href="img/portfolio/AutoClicker.jpg" data-gallery="global-gallery" data-parent="" data-toggle="lightbox" data-title="Auto Clicker" 
-                data-footer="This utility was created so I could script specific mundane tasks into automated sequences. 
-                The goal was simple, create a way to script simple tasks without any type
-                of api given by the program itself. This uses the win32 modules for python to 
-                save x and y coordinates of the screen of where to click next. After creating a simple clicking scenario,
-                I created this utility to help me record my actions more quickly and put it into it's own scenario. 
-                Code will be given upon request."
-                class="link-search animated linear"><i class="fa fa-search"></i></a>
-						   <!--<a href="#" class="link-chain animated linear"><i class="fa  fa-chain"></i></a>-->
-					   </div>
-						<img class="linear img-portfolio img-responsive" src="img/portfolio/AutoClicker.jpg" alt="Auto Clicker Portfolio Image">
-					   
-					   <div class="folio-caption">
-					   <i class="fa fa-caret-up"></i>
-					       <p>Auto Clicker</p>
-					      
-					   </div>
-					   </div>
-					</div>
-				
-				</div>
-			</div>
-			</div><!-- end of portfolio item 1-->
-			<div class="col-xs-12 col-sm-4 col-md-4 box" data-groups='["all", "python"]'>
-				<div class="folio-img">
-					<div class="portfolio-item">
-						<div class="thumbnail">
-						<div class="thumb-img">
-						 <div class="link-attr">
-						    <a href="img/portfolio/HorseRace.jpg" data-gallery="global-gallery" data-parent="" data-toggle="lightbox" data-title="Horse Race" 
-                data-footer="This game was created using python and the pygame module. The game uses the random 
-                function to generate each horses movement. 
-                Once a horse reaches the finish line, the game will check what horse you chose and 
-                tell you that you either won or lost and allow you to play again. This was to be a prototype 
-                for a similar game that I plan to create for android. 
-                Code will be given upon request."
-                class="link-search animated linear"><i class="fa fa-search"></i></a>
-						   <!--<a href="#" class="link-chain animated linear"><i class="fa  fa-chain"></i></a>-->
-					   </div>
-						<img class="linear img-portfolio img-responsive" src="img/portfolio/HorseRace.jpg" alt="Horse Race Portfolio Image">
-						 <!--<div class="link"><a href="#">This is Folio Link 2</a></div>-->
-						<div class="folio-caption">
-						<i class="fa fa-caret-up"></i>
-					       <p>Horse Race</p>
-					   </div>
-						</div>
-					    </div>
-					</div>
-				</div>
-			</div><!-- end of portfolio item 2-->
-			<div class="col-xs-12 col-sm-4 col-md-4 box" data-groups='["all", "HTML", "javascript"]'>
-				<div class="folio-img">
-					<div class="portfolio-item">
-						<div class="thumbnail">
-						<div class="thumb-img">
-						<div class="link-attr">
-						    <a href="img/portfolio/MultForm.jpg" data-gallery="global-gallery" data-parent="" data-toggle="lightbox" data-title="Multiplication Form"
-                data-footer="This project was made for a html and javascript course at the University of Massachusetts Lowell. 
-                The goal was to create a form for a person to enter a range of numbers and generate its
-                multiplication table from it. Further more I was able to add code that would allow the user 
-                to see the row and column highlighted when hovering over a cell. 
-                This code can be used here"
-                class="link-search animated linear"><i class="fa fa-search"></i></a>
-						   <a href="http://jaredjacob667.github.io/multForm/" class="link-chain animated linear"><i class="fa  fa-chain"></i></a>
-					   </div>
-						 <img class="linear img-portfolio img-responsive" src="img/portfolio/MultForm.jpg" alt="Multiplication Form Portfolio Image">
-						   <!--<div class="link"><a href="#">This Is Folio Link3</a></div>-->
-						   <div class="folio-caption">
-						   <i class="fa fa-caret-up"></i>
-					       <p>Multiplication Form</p>
-					       </div>
-					       </div>
-						</div>
-					    
-					</div>
-				</div>
-			</div><!-- end of portfolio item 3-->
-			<div class="col-xs-12 col-sm-4 col-md-4 box" data-groups='["all", "mobile", "android"]'>
-				<div class="folio-img">
-					<div class="portfolio-item">
-						<div class="thumbnail">
-						<div class="thumb-img">
-						<div class="link-attr">
-						    <a href="img/portfolio/AtThat.jpg" data-gallery="global-gallery" data-parent="" data-toggle="lightbox" data-title="@that"
-                 data-footer="&quot;At That&quot; was a project designed for the Difference maker project at the 
-                  University of Massachusetts Lowell. The goal was to work with a group of mixed majors
-                  create a prototype for one student's android/business idea. 
-                  The idea behind the app was to give students incentive
-                  to attend more events on campus by providing a reward system for attending events. The 
-                  app was to use the gps on the phone an time the user at an event and give points
-                  that would later be used to get prizes. Working with a team of 3 student developers, 
-                  we created a prototype application that
-                  was to be shown for the pitching of the idea."
-                 class="link-search animated linear"><i class="fa fa-search"></i></a>
-						   <a href="https://github.com/jaredjacob667/ATThat" class="link-chain animated linear"><i class="fa  fa-chain"></i></a>
-					   </div>
-						<img class="linear img-portfolio img-responsive" src="img/portfolio/AtThat.jpg" alt="At That Portfolio Image">
-						  <!--<div class="link"><a href="#">This Is Folio Link4</a></div>-->
-						  <div class="folio-caption">
-						  <i class="fa fa-caret-up"></i>
-					       <p>@that</p>
-					       </div>
-					     </div>
-						</div>
-					
-					</div>
-				</div>
-			</div><!-- end of portfolio item 4-->
-      <!--
-			<div class="col-xs-12 col-sm-4 col-md-4 box" data-groups='["all", "mobile", "ilustrator"]'>
-				<div class="folio-img">
-					<div class="portfolio-item">
-						<div class="thumbnail">
-						<div class="thumb-img">
-						<div class="link-attr">
-						    <a href="img/portfolio/p05-large.jpg" data-gallery="global-gallery" data-parent="" data-toggle="lightbox" data-title="Image Title Here" class="link-search animated linear"><i class="fa fa-search"></i></a>
-						   <a href="#" class="link-chain animated linear"><i class="fa  fa-chain"></i></a>
-					   </div>
-						<img class="linear img-portfolio img-responsive" src="img/portfolio/p05-large.jpg" alt="This Is Image">
-						<div class="link"><a href="#">This Is Folio Link5</a></div>
-						<div class="folio-caption">
-						<i class="fa fa-caret-up"></i>
-					       <p>This is Folio Caption</p>
-					       </div>
-						</div>
-						</div>
-					
-					</div>
-				</div>
-			</div>
-      -->
-      <!--
-			<div class="col-xs-12 col-sm-4 col-md-4 box" data-groups='["all", "ilustrator"]'>
-				<div class="folio-img">
-					<div class="portfolio-item">
-						<div class="thumbnail">
-						<div class="thumb-img">
-						<div class="link-attr">
-						    <a href="img/portfolio/p06-large.jpg" data-gallery="global-gallery" data-parent="" data-toggle="lightbox" data-title="Image Title Here" class="link-search animated linear"><i class="fa fa-search"></i></a>
-						   <a href="#" class="link-chain animated linear"><i class="fa  fa-chain"></i></a>
-					   </div>
-						<img class="linear img-portfolio img-responsive" src="img/portfolio/p06-large.jpg" alt="This Is Image">
-						<div class="link"><a href="#">This Is Folio Link6</a></div>
-						<div class="folio-caption">
-						<i class="fa fa-caret-up"></i>
-					       <p>This is Folio Caption</p>
-					       </div>
-						</div>
-						</div>
-					
-					</div>
-				</div>
-			</div>
-		  -->
-		   </div>
-		  
-		   </div>
-		  </div><!-- end folio content -->
-		  </div><!-- end col -->
-      </div><!--end container-->
-	 
-	 
-    </div>
-    <!-- /Portfolio -->
-    
-    <!--contact-->
-    <div id="contact" class="page page-bgcolor">
-		<div class="container">
-		<div class="row">
-          <div class="col-md-10  col-md-offset-1">
-		    <div class="build title-page">
-				<h2 class="text-center">GET IN TOUCH</h2>	
-				<div class="line-title bg-primary"></div>
-			</div>
-		   </div><!-- end col -->
-		</div><!-- end row -->
-	  	<div class="row">
-			<div class="col-md-4 ">
-				<div class="build contact clearfix text-center">
-					<span class="fa fa-map-marker"></span>
-						<p>Lowell <br />Massachusetts<p>
-				</div>			
-			</div><!-- end col -->
-			<div class="col-md-4 ">
-				<div class="build contact clearfix text-center">
-					<span class="fa fa-phone"></span>
-          <!-- 
-					<p>tel.<a href="tel:+824 2344 5602">+824 2344 5602</a></p>
-					<p>mob.<a href="tel:+824 256 9877">+824 256 9877</a></p>
-					-->
-          <p> Please email for phone number </p>
-				</div>
-			</div>
-			<div class="col-md-4 ">
-				<div class="build contact clearfix text-center">
-					<span class="fa fa-envelope"></span>
-					<p>jaredjacob667@gmail.com</p>
-				</div>
-			</div>
-		</div><!-- end row -->
-	
-	  </div><!-- end container -->
-	</div>
-    <!--contact-->
-    
-    <!-- Footer -->
-    <footer class="bg-black">
+    <div class="jumbotron">
       <div class="container">
         <div class="row">
-			<div class="col-md-6 ">
-				<div class="cp-right">
-					<p>Created by Jared Jacob. Last updated: 2/09/2016</p>
-          <!-- created using template from http://www.free-css.com/free-css-templates -->
-				</div><!-- end build -->
-			</div><!-- end col -->
-			
-			<div class="col-md-6 text-right">
-		
-			<ul class="list-inline">
-      <!--
-			<li><a href="#" class="socIcon color-primary linear"><i class="fa fa-facebook fa-2x"></i></a></li>
-			<li><a href="#" class="socIcon color-primary linear"><i class="fa fa-twitter fa-2x"></i></a></li>
-			<li><a href="#" class="socIcon color-primary linear"><i class="fa fa-dribbble fa-2x"></i></a></li>
-      -->
-			</ul>
-		
-			</div>
+          <div class="col-md-12">
+            <h1 class="display-3 text-center">Hello, world!</h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <img class="mx-auto d-block imgBorder" src="img/myFace.jpg" alt="Picture of myself (Jared Jacob)">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <p class="text-center lead">I am Jared Jacob. I am a highly motivated and adaptive programmer.</p>
+          </div>
         </div>
       </div>
-    </footer>
-    <!-- /Footer -->
+    </div><!-- end of jumbotron div -->
+    
+    <div class="container" id="myExperience">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card text-white bg-primary border-info mb-3">
+            <h3 class="card-header">My Experience</h3>
+            <div class="card-body">
+              <p class="card-text">Hello, I'm Jared Jacob. I am a responsible and highly motivated programmer. I am adpatable to new changes while also being dependable. I like to challenge myself to further increase my skillbase. I work well on team projects as well as working on my own independent tasks. I have had the priviledge to work with many different languages and frameworks. Although the list below shows my current knowledge, other languages and frameworks have been used and new ones are always being explored.</p>
+              
+              <div class="mb-3" ng-repeat="tech in technologiesArr">
+                <div class="col-md-3 col-sm-12">
+                  <label>{{tech.name}}</label>&nbsp;<span class="badge badge-pill badge-info">{{tech.skill}}%</span>
+                </div>
+                <div class="col-md-8 col-sm-12">
+                  <div class="progress">
+                    <div class="progress-bar bg-info" role="progressbar" style="width: {{tech.skill}}%" aria-valuenow="{{tech.skill}}" aria-valuemin="0" aria-valuemax="100">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+            </div>
+          </div>
+        </div>
+      </div><!-- end of row -->
+    </div><!-- end of myExperience container -->
+    
+    <div class="container" id="projects">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card text-white bg-primary border-info mb-3">
+            <h3 class="card-header">Projects</h3>
+          </div>
+        </div>
+      </div><!-- end of row -->
 
-    <!-- JavaScript -->
-    <script src="js/jquery-1.10.2.js"></script>
-    <script src="js/bootstrap.js"></script>
-	<script src="js/jquery.sticky.js" ></script>
-	 <script src="js/jquery.nav.js"></script>
-    <script src="js/jquery.scrollTo.js" ></script>
-    <script src="js/jquery.flexslider.js" ></script>
-   <script type="text/javascript" src="js/ekko-lightbox.js"></script>
-   <script src="js/jquery.easing.1.3.js" ></script>
-   <script src="js/jquery.shuffle.js" ></script>
-    <script src="js/script.js"></script>
+      <div class="row">
+      	<div class="col-md-6">
+      		<div>
+			  <ul class="pagination">
+			    <li class="page-item" ng-class="{'active': filterVal === ''}">
+			      <a class="page-link text-white" ng-click="filterVal=''">All</a>
+			    </li>
+			    <li class="page-item" ng-class="{'active': filterVal === 'Python'}">
+			      <a class="page-link text-white" ng-click="filterVal='Python'">Python</a>
+			    </li>
+			    <li class="page-item" ng-class="{'active': filterVal === 'Javascript'}">
+			      <a class="page-link text-white" ng-click="filterVal='Javascript'">Javascript</a>
+			    </li>
+			    <li class="page-item" ng-class="{'active': filterVal === 'HTML'}">
+			      <a class="page-link text-white" ng-click="filterVal='HTML'">HTML</a>
+			    </li>
+			  </ul>
+			</div>
+      	</div>
+      </div><!-- end of row -->
 
-    <!-- Custom JavaScript for the Side Menu and Smooth Scrolling -->
-
-  </div>
+      <div class="row">
+        <div class="col-md-4" 
+        ng-repeat="project in projectsArr | orderBy:['-createDateYear','-createDateMonth']"
+        ng-if="isInArray(filterVal,project.technologies) || filterVal===''"
+        >
+          <div class="card border-primary mb-3">
+            <h3 class="card-header">{{project.title}}</h3>
+            <div class="card-body">
+              <!-- Prints array as just comma seperated values -->
+              <h6 class="card-subtitle text-muted">{{project.technologies.join(", ")}}</h6>
+            </div>
+            <img class="projectThumbnail" src="{{project.thumbnail}}" alt="Card image">
+            <div class="card-body" ng-show="longDescShow">
+              <p class="card-text">{{project.longDesc}}</p>
+            </div>
+            <div class="card-body" ng-hide="longDescShow">
+              <p class="card-text">{{project.shortDesc}}</p>
+            </div>
+            <div class="card-body">
+              <button type="button" class="btn btn-primary" ng-click="longDescShow=longDescShow?false:true">Learn More</button>
+            </div>
+            <div class="card-footer text-muted">
+              Created: {{project.createDateMonth}}-{{project.createDateYear}}
+            </div>
+          </div>
+        </div>
+      </div><!-- end of row -->
+    </div><!-- End of projects container -->
+    
+    <div class="container" id="contactMe">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card text-white bg-primary border-info mb-3">
+            <h3 class="card-header">Contact</h3>
+            <div class="row">
+              <!-- Icons found at https://www.iconfinder.com/iconsets/social-media-black-white-1-->
+              <div class="card-body col-md-6">
+	            <a href="mailto:jaredjacob667@gmail.com">
+	            <img class="mx-auto d-block imgBorder" src="img/icons/mail_icon.png" alt="Email me: jaredjacob667@gmail.com">
+	        	</a>
+				<h4 class="text-center">jaredjacob667@gmail.com</h4>
+              </div>
+              <div class="card-body col-md-6">
+            	<a href="https://www.linkedin.com/in/jaredjacob1/">
+            	<img class="mx-auto d-block imgBorder" src="img/icons/linkedin_icon.png" alt="Linkedin: https://www.linkedin.com/in/jaredjacob1/">
+        		</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- end of row -->
+    </div><!-- end of contactMe container -->
+    
+    <!-- <div class="container-fluid"> -->
+      <footer id="footerContainer">
+      	<div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <!-- <h6 class="text-left footerTextLeft">Last Updated: 1-30-2018</h6> -->
+            <h6 class="text-left">Last Updated: 1-30-2018</h6>
+          </div>
+          <div class="col-md-6">
+            <!-- <h6 class="text-right footerTextRight">Author: Jared Jacob</h6> -->
+            <h6 class="text-right">Author: Jared Jacob</h6>
+          </div>
+        </div>
+    	</div>
+      </footer>
+    <!-- </div> -->
+  
   </body>
-
 </html>
