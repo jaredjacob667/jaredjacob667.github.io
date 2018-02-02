@@ -113,6 +113,7 @@
       	<div class="col-md-6">
       		<div>
 			  <ul class="pagination">
+          <!-- Will change this to ng-repeat and abstract this data to the controller -->
 			    <li class="page-item" ng-class="{'active': filterVal === ''}">
 			      <a class="page-link text-white" ng-click="filterVal=''">All</a>
 			    </li>
@@ -186,22 +187,18 @@
       </div><!-- end of row -->
     </div><!-- end of contactMe container -->
     
-    <!-- <div class="container-fluid"> -->
-      <footer id="footerContainer">
-      	<div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <!-- <h6 class="text-left footerTextLeft">Last Updated: 1-30-2018</h6> -->
-            <h6 class="text-left">Last Updated: 1-30-2018</h6>
-          </div>
-          <div class="col-md-6">
-            <!-- <h6 class="text-right footerTextRight">Author: Jared Jacob</h6> -->
-            <h6 class="text-right">Author: Jared Jacob</h6>
-          </div>
+    <footer id="footerContainer">
+      <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h6 class="text-left">Last Updated: 02-01-2018</h6>
         </div>
-    	</div>
-      </footer>
-    <!-- </div> -->
+        <div class="col-md-6">
+          <h6 class="text-right">Author: Jared Jacob</h6>
+        </div>
+      </div>
+    </div>
+    </footer>
   
   </body>
 </html>

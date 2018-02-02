@@ -66,7 +66,7 @@ angular.module('personalPortfolioApp')
 								"technologies":["HTML", "Javascript", "AngularJS"],
 								"createDateMonth":"02",
 								"createDateYear":"2018",
-								"thumbnail":"img/portfolio/Imports.png",
+								"thumbnail":"img/portfolio/ThisSite.png",
 								"shortDesc":"Personal Portfolio",
 								"longDesc":"This was created to replace my old site which was derived from a template and hard to maintain. I wanted to use my newly aquired AngularJS to make editting and maintaining projects easier for me. Credit to bootswatch.com for the UI styles."
 							}
