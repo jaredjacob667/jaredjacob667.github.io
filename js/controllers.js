@@ -76,25 +76,33 @@ angular.module('personalPortfolioApp')
 	//skill out of 100 percent
 	$scope.technologiesArr = [
 								{
-									"name":"Python",
-									"skill":"80"
-								},
-								{
 									"name":"Javascript",
 									"skill":"90"
 								},
 								{
+									"name":"Python",
+									"skill":"75"
+								},
+								{
 									"name":"AngularJS",
 									"skill":"75"
-								},	
+								},
 								{
 									"name":"NodeJS",
+									"skill":"80"
+								},
+								{
+									"name":"Java",
 									"skill":"70"
-								}		
+								},
+								{
+									"name":"C#",
+									"skill":"70"
+								}
 							 ];
-	
+
 	//starts off all projects will only show the short description
-	//This will toggle on the front end by a button on the proj card					
+	//This will toggle on the front end by a button on the proj card
 	$scope.longDescShow = false;
 
 	//starts filter to be nothing

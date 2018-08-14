@@ -6,26 +6,26 @@
     <meta name="description" content="Jared Jacob's current experience">
     <meta name="author" content="Jared Jacob">
     <title>Jared Jacob's Portfolio</title>
-    
+
     <!-- ANGULAR -->
     <script src="js/angular.min.js"></script>
-    
+
     <!-- ANGULAR APP SETUP -->
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
-    
+
     <!-- Bootstrap 4 with theme (Flatly)-->
     <!-- replaces regular bootstrap css -->
     <!-- Credit to https://bootswatch.com/-->
     <link rel="stylesheet" href="css/bootstrap.css">
-    
+
     <!-- personal added styles -->
     <link rel="stylesheet" href="css/custom_styles.css">
   </head>
   <body ng-controller="personalPortfolioController">
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
       <a class="navbar-brand" href="#">Jared Jacob</a>
-      <!-- 
+      <!--
         found out how to implement this as just angularjs so that I don't have to mess
         with the JQuery dependency for bootstrap.js
         https://stackoverflow.com/questions/14741988/twitter-bootstrap-navbar-with-angularjs-collapse-not-functioning
@@ -53,7 +53,7 @@
         </ul>
       </div>
     </nav>
-    
+
     <div class="jumbotron">
       <div class="container">
         <div class="row">
@@ -63,7 +63,7 @@
         </div>
         <div class="row">
           <div class="col-md-12">
-            <img class="mx-auto d-block imgBorder" src="img/myFace.jpg" alt="Picture of myself (Jared Jacob)">
+            <img class="mx-auto d-block imgBorder imgSize-250" src="img/myFace.jpg" alt="Picture of myself (Jared Jacob)">
           </div>
         </div>
         <div class="row">
@@ -73,7 +73,7 @@
         </div>
       </div>
     </div><!-- end of jumbotron div -->
-    
+
     <div class="container" id="myExperience">
       <div class="row">
         <div class="col-md-12">
@@ -81,7 +81,7 @@
             <h3 class="card-header">My Experience</h3>
             <div class="card-body">
               <p class="card-text">Hello, I'm Jared Jacob. I am a responsible and highly motivated programmer. I am adpatable to new changes while also being dependable. I like to challenge myself to further increase my skillbase. I work well on team projects as well as working on my own independent tasks. I have had the priviledge to work with many different languages and frameworks. Although the list below shows my featured current knowledge, other languages and frameworks have been used and new ones are always being explored.</p>
-              
+
               <div class="mb-3" ng-repeat="tech in technologiesArr">
                 <div class="col-md-3 col-sm-12">
                   <label>{{tech.name}}</label>&nbsp;<span class="badge badge-pill badge-info">{{tech.skill}}%</span>
@@ -93,13 +93,13 @@
                   </div>
                 </div>
               </div>
-            
+
             </div>
           </div>
         </div>
       </div><!-- end of row -->
     </div><!-- end of myExperience container -->
-    
+
     <div class="container" id="projects">
       <div class="row">
         <div class="col-md-12">
@@ -126,16 +126,13 @@
           <li class="page-item" ng-class="{'active': filterVal === 'NodeJS'}">
             <a class="page-link text-white" ng-click="filterVal='NodeJS'">NodeJS</a>
           </li>
-			    <li class="page-item" ng-class="{'active': filterVal === 'HTML'}">
-			      <a class="page-link text-white" ng-click="filterVal='HTML'">HTML</a>
-			    </li>
 			  </ul>
 			</div>
       	</div>
       </div><!-- end of row -->
 
       <div class="row">
-        <div class="col-md-4" 
+        <div class="col-md-4"
         ng-repeat="project in projectsArr | orderBy:['-createDateYear','-createDateMonth']"
         ng-if="isInArray(filterVal,project.technologies) || filterVal===''"
         >
@@ -162,7 +159,7 @@
         </div>
       </div><!-- end of row -->
     </div><!-- End of projects container -->
-    
+
     <div class="container" id="contactMe">
       <div class="row">
         <div class="col-md-12">
@@ -186,7 +183,7 @@
         </div>
       </div><!-- end of row -->
     </div><!-- end of contactMe container -->
-    
+
     <footer id="footerContainer">
       <div class="container">
       <div class="row">
@@ -199,6 +196,6 @@
       </div>
     </div>
     </footer>
-  
+
   </body>
 </html>
