@@ -16,7 +16,7 @@ angular
         shortDesc:
           "A natural language processing Slack Chatbot used to automate IT tasks and questions",
         longDesc:
-          'This Slack bot was written using the Slack BoltJS library for NodeJS along with integrations with Amazon Lex. Here we have mapped utterances or natural language phrases such as "I want to create a case" to intent such as create_case. From there the chatbot was setup with many integrations to systems including Salesforce, Dropbox, O365 to create cases, show statuses, or direct users to knowledge base articles for issues.',
+          "This Slack bot was written using the Slack BoltJS library for NodeJS along with integrations with Amazon Lex. Here we have mapped utterances or natural language phrases such as 'I want to create a case' to intent such as create_case. From there the chatbot was setup with many integrations to systems including Salesforce, Dropbox, O365 to create cases, show statuses, or direct users to knowledge base articles for issues.",
       },
       {
         title: "Auto Clicker",
