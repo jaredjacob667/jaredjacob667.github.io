@@ -12,7 +12,7 @@ angular
         technologies: ["Javascript"],
         createDateMonth: "09",
         createDateYear: "2020",
-        thumbnail: "img/portfolio/DeweyChatbot.jpg",
+        thumbnail: "img/portfolio/DeweyChatBot.jpg",
         shortDesc:
           "A natural language processing Slack Chatbot used to automate IT tasks and questions",
         longDesc:
