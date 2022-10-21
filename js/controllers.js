@@ -111,15 +111,11 @@ angular
         skill: "75",
       },
       {
-        name: "AngularJS",
-        skill: "75",
-      },
-      {
         name: "NodeJS",
-        skill: "80",
+        skill: "90",
       },
       {
-        name: "Java",
+        name: "ReactJS",
         skill: "70",
       },
       {
